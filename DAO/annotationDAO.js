@@ -4,11 +4,15 @@
 
 var Models = require('../models/annotation');
 
-// var updateCustomer = function(criteria, dataToSet, options, callback) {
-//     options.lean = true;
-//     options.new = true;
-//     Models.findOneAndUpdate(criteria, dataToSet, options, callback);
-// };
+var updateAnotation = function(criteria, dataToSet, callback) {
+    let options = {};
+    options.lean = true;
+    options.new = true;
+    options.upsert = true;
+    // console.log("criteria",criteria)
+    // console.log('dataToSet',dataToSet)
+    Models.findOneAndUpdate(criteria, dataToSet, options, callback);
+};
 
 //Insert annotatedData in DB
 var createAnnotation = function(objToSave, callback) {
@@ -33,7 +37,7 @@ var getAnnotation = function(criteria, projection, callback) {
 };
 
 module.exports = {
-    // updateCustomer: updateCustomer,
+    updateAnotation,
     createAnnotation,
     deleteAnnotation,
     getAnnotation

@@ -40,7 +40,7 @@ app.controller('storeCtrl', function($scope,constantUrl,servercalls,$state,$root
      if(err){
        toastr.error(err); 
      }else{
-
+      console.log(data)
       servercalls.anootationShow(data);
 
       }

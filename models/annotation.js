@@ -8,6 +8,7 @@ let Annotation = new Schema({
     },
     range: {
         type: Object,
+        unique: true,
         required: true
     } ,
   
