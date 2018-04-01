@@ -38,7 +38,7 @@ app.controller('storeCtrl', function($scope,constantUrl,servercalls,$state,$root
     
     servercalls.getData('/getanot',{}, function(err, data){
      if(err){
-       toastr.error(data.status.message); 
+       toastr.error(err); 
      }else{
 
       servercalls.anootationShow(data);
