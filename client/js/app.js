@@ -1,6 +1,6 @@
 var app = angular.module('giftbomb',['ui.router','ui.bootstrap','toastr','angularUtils.directives.dirPagination']);
 // app.constant('constantUrl', {'BASE_URL':'http://localhost:3000'});
-app.constant('constantUrl', {'BASE_URL':'https://warm-garden-87939.herokuapp.com/'});
+app.constant('constantUrl', {'BASE_URL':'https://warm-garden-87939.herokuapp.com'});
 
 
 
