@@ -53,23 +53,23 @@ var Editor = (function Editor() {
                     editor[eventMap["action"]].call(editor, e);
                 })
             }, this);
+
+            $('#sideAnot').html(this.renderEditorTemplate());
         },
 
-        renderEditorTemplate: function() {
-            var html =  '<div id="annotation-editor">'
+        renderEditorTemplate: function(html) {
+             this.html =  '<div id="annotation-editor">'
                      +      '<ul class="dropdown-list">'
-                     +          '<li class="colors">'
-                     ;
+                     +       '<li class="colors">';
 
             this.annotator.colors.forEach(function(color, index) {
                 var className = 'js-color-picker color'
                               + ' ' + color.className 
-                              + ' ' + (index == 0 ? 'active' : '')
-                    ;
-                html += '<span data-color="' + color.className + '" class="' + className + '"></span>';
+                              + ' ' + (index == 0 ? 'active' : '');
+                this.html += '<span data-color="' + color.className + '" class="' + className + '"></span>';
             });
 
-            html += '</li>'
+            this.html += '</li>'
                  +  '<li class="note-input">'
                  +      '<form class="js-note-form">'
                  +          '<input type="text" class="js-tags-field" placeholder="#revision, #later">' 
@@ -77,7 +77,7 @@ var Editor = (function Editor() {
                  +          '<input type="submit" id="add-button" value="Add Note" />'
                  +      '</form>'
                  +  '</li>'
-                 +  '<li><a href="#" class="js-copy">Copy</a></li>'
+                 
                  +  '<li><span class="link">Share</span>'
                  +      '<ul class="dropdown-list sub-list">'
                  +          '<li class="js-facebook-share"><a href="#" class="js-share facebook">Facebook</a></li>'
@@ -89,7 +89,7 @@ var Editor = (function Editor() {
                  + '</div>'
             ;
 
-            return html;
+            return this.html;
         },
 
         showEditor: function(opts) {
@@ -100,7 +100,7 @@ var Editor = (function Editor() {
             temporary = opts.temporary;
 
             var top = position.top - 30;
-            var left = position.left - this.$popoverElement.width()/2;
+            var left = 0;
 
             if(annotation) {
                 this.annotation = annotation;

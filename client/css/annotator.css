@@ -37,12 +37,12 @@
   background: #babaff; }
 
 #annotation-editor {
-  margin-top: 50px;
+  /*margin-top: 50px;*/
   position: relative;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   display: none;
-  position: absolute;
-  box-shadow: 0 3px 35px rgba(0, 0, 0, 0.21); }
+  /*position: absolute;*/
+  /*box-shadow: 0 3px 35px rgba(0, 0, 0, 0.21);*/ }
   #annotation-editor:after {
     content: '';
     position: absolute;
@@ -70,7 +70,9 @@
   #annotation-editor .dropdown-list {
     background: #ffffff;
     display: inline-block;
-    width: 180px;
+   /* width: 180px;*/
+    width: 222px;
+    height: 500px;
     border-radius: 3px;
     border: 1px solid #bbbbbb;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 3px 15px rgba(0, 0, 0, 0.15);

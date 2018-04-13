@@ -50,7 +50,9 @@ table {
 =====================================*/
 body {
   background: #f1f1f1;
-  font: 16px/1.5 Helvetica, Arial, sans-serif; }
+  font: 16px/1.5 Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center; }
 
 .container {
   overflow: hidden;
